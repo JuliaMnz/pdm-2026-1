@@ -73,7 +73,7 @@ export default function App() {
           <TextInput
             style={styles.input}
             keyboardType="numeric"
-            placeholder="Ex: 08"
+            placeholder="Ex: 08"                    
             value={mes}
             onChangeText={setMes}
           />
