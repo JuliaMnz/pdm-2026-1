@@ -1,23 +1,31 @@
-import { View, Text, StyleSheet, Pressable } from 'react-native';
-import { Link } from 'expo-router';
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import Profile from '../components/Profile';
 
-export default function BioScreen() {
+export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Olá, eu sou a Julia!</Text>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.mainTitle}>
+        App criado para a disciplina Programação para Dispositivos Móveis
+      </Text>
       
-      <Link href="/detalhes" asChild>
-        <Pressable style={styles.button}>
-          <Text style={styles.buttonText}>Ver mais curiosidades</Text>
-        </Pressable>
-      </Link>
-    </View>
+      <Profile />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 20 },
-  title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
-  button: { backgroundColor: '#007AFF', padding: 15, borderRadius: 8 },
-  buttonText: { color: 'white', fontWeight: 'bold' }
+  container: {
+    flex: 1,
+    backgroundColor: '#f0f2f5',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
+  },
+  mainTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#1a1a1a',
+    textAlign: 'center',
+    marginBottom: 30,
+  },
 });
