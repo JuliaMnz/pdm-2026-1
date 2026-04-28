@@ -32,7 +32,7 @@ export default function PaginaUm() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: '#f5f5f5' },
+  container: { flex: 1, padding: 20, backgroundColor: '#19192b' },
   titulo: { marginBottom: 20, marginTop: 40, fontWeight: 'bold' },
   card: { marginBottom: 30 },
   button: { marginTop: 10 }

@@ -48,7 +48,7 @@ export default function PaginaDois() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: '#fff' },
+  container: { flex: 1, padding: 20, backgroundColor: '#19192b' },
   titulo: { marginBottom: 20, marginTop: 40, fontWeight: 'bold' },
   subtitulo: { marginBottom: 10 },
   input: { marginBottom: 20 },
