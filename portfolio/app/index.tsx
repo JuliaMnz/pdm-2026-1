@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Linking, ActivityIndicator } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import api from '../services/api'; // Ajuste o caminho se necessário
+import api from '../services/api'; 
 
 interface Usuario {
   nome: string;

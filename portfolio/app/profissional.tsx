@@ -17,16 +17,16 @@ export default function Profissional() {
 
   useEffect(() => {
     api.get('/experiencias')
-      .then((response) => {
-        // Filtra excluindo Unicap e Faculdade
-        const profissional = response.data.filter((item: Experiencia) => 
-          !item.empresa.toLowerCase().includes('unicap') && 
-          !item.empresa.toLowerCase().includes('faculdade')
-        );
-        setExperiencias(profissional);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
+    .then((response) => {
+        // Filtra apenas as experiências profissionais 
+        const minhasProfissionais = response.data.filter((item: any) => 
+        item.userId === 1 && 
+        !item.empresa.toLowerCase().includes('unicap') && 
+        !item.empresa.toLowerCase().includes('faculdade')
+    );
+    setExperiencias(minhasProfissionais);
+    setLoading(false);
+    });
   }, []);
 
   if (loading) return <ActivityIndicator size="large" color="#2563eb" style={{ flex: 1 }} />;

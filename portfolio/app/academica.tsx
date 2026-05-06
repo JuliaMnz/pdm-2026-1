@@ -17,16 +17,15 @@ export default function Academica() {
 
   useEffect(() => {
     api.get('/experiencias')
-      .then((response) => {
-        // Filtra apenas experiências onde a empresa seja Unicap ou Faculdade
-        const academico = response.data.filter((item: Experiencia) => 
-          item.empresa.toLowerCase().includes('unicap') || 
-          item.empresa.toLowerCase().includes('faculdade')
-        );
-        setExperiencias(academico);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
+    .then((response) => {
+    // Filtro duplo: Garante que é o meu id e que é acadêmico
+    const minhasAcademicas = response.data.filter((item: any) => 
+      item.userId === 1 && 
+      (item.empresa.toLowerCase().includes('unicap') || item.empresa.toLowerCase().includes('faculdade'))
+    );
+    setExperiencias(minhasAcademicas);
+    setLoading(false);
+  });
   }, []);
 
   if (loading) return <ActivityIndicator size="large" color="#2563eb" style={{ flex: 1 }} />;
